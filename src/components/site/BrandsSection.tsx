@@ -47,27 +47,51 @@ export function BrandsSection() {
       <h3 id="brands-title" className="text-xl font-semibold">
         Nos marques
       </h3>
-      <div className="mt-6 grid grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* Mobile: détail sous la carte cliquée */}
+      <div className="mt-6 grid gap-6 grid-cols-1 lg:hidden">
         {BRANDS.map((b) => (
-          <BrandCard
-            key={b.key}
-            name={b.name}
-            onClick={() => onToggle(b.key)}
-            isActive={active === b.key}
-          />
+          <div key={b.key}>
+            <BrandCard name={b.name} onClick={() => onToggle(b.key)} isActive={active === b.key} />
+            <div className="mt-4">
+              <AnimatePresence initial={false} mode="wait">
+                {active === b.key && (
+                  <BrandDetail
+                    key={b.key}
+                    name={b.name}
+                    description={b.description}
+                    onClose={() => setActive(null)}
+                  />
+                )}
+              </AnimatePresence>
+            </div>
+          </div>
         ))}
       </div>
-      <div className="mt-8">
-        <AnimatePresence initial={false} mode="wait">
-          {activeBrand && (
-            <BrandDetail
-              key={activeBrand.key}
-              name={activeBrand.name}
-              description={activeBrand.description}
-              onClose={() => setActive(null)}
+
+      {/* Desktop: grille 2x2 + détail en dessous */}
+      <div className="hidden lg:block">
+        <div className="mt-6 grid grid-cols-2 lg:grid-cols-4 gap-6">
+          {BRANDS.map((b) => (
+            <BrandCard
+              key={b.key}
+              name={b.name}
+              onClick={() => onToggle(b.key)}
+              isActive={active === b.key}
             />
-          )}
-        </AnimatePresence>
+          ))}
+        </div>
+        <div className="mt-8">
+          <AnimatePresence initial={false} mode="wait">
+            {activeBrand && (
+              <BrandDetail
+                key={activeBrand.key}
+                name={activeBrand.name}
+                description={activeBrand.description}
+                onClose={() => setActive(null)}
+              />
+            )}
+          </AnimatePresence>
+        </div>
       </div>
     </section>
   );
