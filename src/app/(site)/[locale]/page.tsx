@@ -6,7 +6,7 @@ import { Strategy } from '@/components/site/Strategy';
 import { Testimonials } from '@/components/site/Testimonials';
 import { MapStatic } from '@/components/site/Map';
 import { Contact } from '@/components/site/Contact';
-import { BrandsGrid } from '@/components/site/BrandsGrid';
+import { BrandsSection } from '@/components/site/BrandsSection';
 import { PressPreview } from '@/components/site/PressPreview';
 import { supportedLocales } from '@/lib/i18n';
 
@@ -17,7 +17,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
       <Hero locale={locale} />
 
       <About />
-      <BrandsGrid />
+      <BrandsSection />
       <Kpis
         items={[
           { label: 'CA 2025 (run rate)', value: 33_000_000, suffix: '€' },
