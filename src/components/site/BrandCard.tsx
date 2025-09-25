@@ -12,11 +12,11 @@ export function BrandCard({ name, onClick, isActive }: BrandCardProps) {
       type="button"
       onClick={onClick}
       aria-pressed={!!isActive}
-      className={`text-left rounded-lg border ${
+      className={`w-full text-left rounded-lg border ${
         isActive ? 'border-black' : 'border-neutral-200'
       } p-4 bg-white hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black transition-shadow`}
     >
-      <div className="relative mx-auto aspect-[4/3] w-full max-w-[200px] bg-neutral-100 rounded-md overflow-hidden">
+      <div className="relative aspect-[4/3] w-full bg-neutral-100 rounded-md overflow-hidden">
         <Image
           src="/assets/placeholders/brand.jpg"
           alt={`Logo ${name}`}
