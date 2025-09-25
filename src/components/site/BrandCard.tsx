@@ -13,8 +13,8 @@ export function BrandCard({ name, onClick, isActive }: BrandCardProps) {
       onClick={onClick}
       aria-pressed={!!isActive}
       className={`w-full text-left rounded-lg border ${
-        isActive ? 'border-black' : 'border-neutral-200'
-      } p-4 bg-white hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black transition-shadow`}
+        isActive ? 'border-[#60617E]' : 'border-neutral-200'
+      } p-4 bg-white hover:shadow-xl hover:-translate-y-1 transition-all`}
     >
       <div className="relative aspect-[4/3] w-full bg-neutral-100 rounded-md overflow-hidden">
         <Image
@@ -24,7 +24,7 @@ export function BrandCard({ name, onClick, isActive }: BrandCardProps) {
           className="object-cover"
         />
       </div>
-      <p className="mt-3 text-sm font-medium">{name}</p>
+      <p className="mt-3 text-sm font-medium text-[#60617E]">{name}</p>
     </button>
   );
 }

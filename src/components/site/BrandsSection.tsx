@@ -79,7 +79,7 @@ export function BrandsSection() {
 
   return (
     <section aria-labelledby="brands-title" className="container-site py-12">
-      <h3 id="brands-title" className="text-xl font-semibold">
+      <h3 id="brands-title" className="text-xl font-bold text-[#60617E]">
         Nos marques
       </h3>
       {/* Mobile: détail sous la carte cliquée */}

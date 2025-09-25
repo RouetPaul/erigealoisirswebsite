@@ -18,16 +18,18 @@ export function Button({
   ...props
 }: ButtonProps) {
   const base =
-    'inline-flex items-center justify-center rounded-lg font-medium transition-colors focus-visible:outline-none';
+    'inline-flex items-center justify-center rounded-lg font-medium transition-all focus-visible:outline-none active:scale-[0.98]';
   const sizes = {
     sm: 'text-sm h-9 px-3',
     md: 'text-sm h-10 px-4',
     lg: 'text-base h-12 px-5',
   } as const;
   const variants = {
-    primary: 'bg-[var(--color-primary)] text-white hover:opacity-90',
-    secondary: 'border border-neutral-300 bg-white hover:bg-neutral-50',
-    ghost: 'hover:bg-neutral-100',
+    primary:
+      'bg-[var(--color-primary)] text-[var(--color-secondary)] shadow-sm hover:shadow-lg hover:-translate-y-0.5 hover:scale-[1.02]',
+    secondary:
+      'border border-neutral-300 bg-white text-[var(--color-secondary)] hover:bg-[var(--pastel-1)] hover:shadow',
+    ghost: 'text-[var(--color-secondary)] hover:bg-[var(--pastel-3)]',
   } as const;
 
   return (

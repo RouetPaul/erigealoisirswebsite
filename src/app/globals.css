@@ -1,13 +1,18 @@
 @import 'tailwindcss';
 
 :root {
-  /* Couleurs exposées depuis les tokens (thèmes clair/sombre) */
-  --color-primary: #0d6efd;
-  --color-primary-foreground: #ffffff;
-  --color-secondary: #6c757d;
-  --color-accent: #22c55e;
+  /* Palette Érigea Loisirs */
+  --color-primary: #dbde6f; /* anis - accent principal */
+  --color-primary-foreground: #60617e; /* violet profond comme texte d'accent */
+  --color-secondary: #60617e; /* violet profond - éléments structurants */
+  --color-accent: #dbde6f;
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1f2937; /* gray-800 */
+
+  /* Pastels */
+  --pastel-1: #f7f8da;
+  --pastel-2: #eaeda2;
+  --pastel-3: #f8f8de;
 }
 
 @media (prefers-color-scheme: dark) {
