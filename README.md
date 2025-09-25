@@ -41,3 +41,9 @@ Docker/Ionos
 Contrib
 
 - Husky pre-commit: eslint + prettier via lint-staged
+
+Workflow de contribution
+
+- Après chaque tâche terminée (unité de travail cohérente), effectuer un commit puis un push immédiat.
+- Préférer des commits atomiques et descriptifs (scope clair, e.g. `feat(site): ...`, `fix(press): ...`).
+- Ne pas accumuler plusieurs tâches dans un même commit.
