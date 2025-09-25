@@ -1,0 +1,5 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npm run lint --silent || exit 1
+npx --yes lint-staged
