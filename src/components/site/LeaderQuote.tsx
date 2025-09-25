@@ -1,3 +1,4 @@
+'use client';
 import { Quote } from '@/components/ds/Quote';
 import { motion } from 'framer-motion';
 
