@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { BrandCard } from './BrandCard';
 import { BrandDetail } from './BrandDetail';
@@ -58,8 +58,24 @@ const BRANDS: Brand[] = [
 
 export function BrandsSection() {
   const [active, setActive] = useState<Brand['key'] | null>(null);
+  const detailRef = useRef<HTMLDivElement | null>(null);
   const onToggle = (key: Brand['key']) => setActive((cur) => (cur === key ? null : key));
   const activeBrand = BRANDS.find((b) => b.key === active) || null;
+
+  useEffect(() => {
+    if (!active) return;
+    const el = detailRef.current;
+    if (!el) return;
+    const isMobile =
+      typeof window !== 'undefined' && window.matchMedia('(max-width: 1023px)').matches;
+    if (!isMobile) return;
+    const rect = el.getBoundingClientRect();
+    const outOfView =
+      rect.top < 0 || rect.bottom > (typeof window !== 'undefined' ? window.innerHeight : 0);
+    if (outOfView) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [active]);
 
   return (
     <section aria-labelledby="brands-title" className="container-site py-12">
@@ -71,7 +87,11 @@ export function BrandsSection() {
         {BRANDS.map((b) => (
           <div key={b.key}>
             <BrandCard name={b.name} onClick={() => onToggle(b.key)} isActive={active === b.key} />
-            <div className="mt-4">
+            <div
+              className="mt-4"
+              id={`brand-detail-${b.key}`}
+              ref={active === b.key ? detailRef : null}
+            >
               <AnimatePresence initial={false} mode="wait">
                 {active === b.key && (
                   <BrandDetail
@@ -100,7 +120,7 @@ export function BrandsSection() {
             />
           ))}
         </div>
-        <div className="mt-8">
+        <div className="mt-8" id="brand-detail" ref={activeBrand ? detailRef : null}>
           <AnimatePresence initial={false} mode="wait">
             {activeBrand && (
               <BrandDetail
