@@ -35,11 +35,26 @@ export function listPress(lang?: string): PressFrontmatter[] {
 
 export function getPressBySlug(slug: string): PressDoc | null {
   if (!fs.existsSync(CONTENT_DIR)) return null;
-  const file = [path.join(CONTENT_DIR, `${slug}.md`), path.join(CONTENT_DIR, `${slug}.mdx`)].find(
+  // 1) Try direct filename match first for backward compatibility
+  const direct = [path.join(CONTENT_DIR, `${slug}.md`), path.join(CONTENT_DIR, `${slug}.mdx`)].find(
     fs.existsSync
   );
-  if (!file) return null;
-  const raw = fs.readFileSync(file, 'utf8');
-  const { data, content } = matter(raw);
-  return { frontmatter: data as PressFrontmatter, content };
+  if (direct) {
+    const raw = fs.readFileSync(direct, 'utf8');
+    const { data, content } = matter(raw);
+    return { frontmatter: data as PressFrontmatter, content };
+  }
+
+  // 2) Fallback: scan all files and match on frontmatter.slug
+  const files = fs.readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.md') || f.endsWith('.mdx'));
+  for (const fileName of files) {
+    const filePath = path.join(CONTENT_DIR, fileName);
+    const raw = fs.readFileSync(filePath, 'utf8');
+    const { data, content } = matter(raw);
+    const fm = data as PressFrontmatter;
+    if (fm.slug === slug) {
+      return { frontmatter: fm, content };
+    }
+  }
+  return null;
 }

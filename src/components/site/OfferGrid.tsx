@@ -7,15 +7,15 @@ const items = [
   },
   {
     title: 'Laser World',
-    desc: 'Salles de Laser Game décorées par des artistes, parfois avec karaoké et arcade.',
+    desc: 'Salles de Laser Game en Île-de-France, décorées par des artistes-peintres, parfois complétées de karaoké et arcade.',
   },
   {
     title: 'Padel World',
-    desc: 'Clubs modernes avec terrains indoor/outdoor, cours tous niveaux, fitness et lounge.',
+    desc: 'Clubs modernes avec terrains indoor/outdoor, cours pour tous niveaux, espace fitness et lounge.',
   },
   {
     title: 'Climb World',
-    desc: 'Clubs d’escalade ludiques dans des décors thématiques, pour débutants à confirmés.',
+    desc: 'Clubs d’escalade ludiques dans des décors thématiques colorés, adaptés aux débutants comme aux confirmés.',
   },
 ];
 
