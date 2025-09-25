@@ -1,7 +1,7 @@
 import { Hero } from '@/components/site/Hero';
 import { About } from '@/components/site/About';
 import { Kpis } from '@/components/site/Kpis';
-import { OfferGrid } from '@/components/site/OfferGrid';
+// import { OfferGrid } from '@/components/site/OfferGrid';
 import { Strategy } from '@/components/site/Strategy';
 import { Testimonials } from '@/components/site/Testimonials';
 import { MapStatic } from '@/components/site/Map';
@@ -9,6 +9,7 @@ import { Contact } from '@/components/site/Contact';
 import { BrandsSection } from '@/components/site/BrandsSection';
 import { PressPreview } from '@/components/site/PressPreview';
 import { supportedLocales } from '@/lib/i18n';
+import { LeaderQuote } from '@/components/site/LeaderQuote';
 
 export default async function Landing({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -28,7 +29,8 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
           { label: 'Marques complémentaires', value: 4 },
         ]}
       />
-      <OfferGrid />
+      {/* Offre multi-activité retirée */}
+      <LeaderQuote />
       <Strategy />
       <Testimonials />
       <MapStatic />

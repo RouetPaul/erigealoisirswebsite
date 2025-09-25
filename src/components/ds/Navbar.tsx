@@ -15,9 +15,6 @@ export function Navbar({ locale }: { locale: string }) {
       <Link href={`/${locale}#kpis`} className="hover:underline" onClick={close}>
         Chiffres clés
       </Link>
-      <Link href={`/${locale}#offer`} className="hover:underline" onClick={close}>
-        Offre
-      </Link>
       <Link href={`/${locale}/press`} className="hover:underline" onClick={close}>
         Presse
       </Link>
