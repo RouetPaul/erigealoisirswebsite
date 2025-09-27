@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { listPress } from '@/lib/press';
 
 export function PressPreview({ locale }: { locale: string }) {
@@ -22,6 +23,14 @@ export function PressPreview({ locale }: { locale: string }) {
           >
             <div className="h-1.5 w-full bg-[#60617E]" />
             <div className="p-4">
+              <div className="relative aspect-[4/2] rounded-md overflow-hidden bg-[var(--pastel-1)]">
+                <Image
+                  src="https://cdn.prod.website-files.com/6814c438f30142dd9c692fa2/68655c1227598249b9c73174_creteil_soleil_smile_world.webp"
+                  alt="Communiqué — visuel d’en-tête Smile World"
+                  fill
+                  className="object-cover"
+                />
+              </div>
               <h3 className="text-lg font-semibold">
                 <Link href={`/${locale}/press/${p.slug}`}>{p.title}</Link>
               </h3>

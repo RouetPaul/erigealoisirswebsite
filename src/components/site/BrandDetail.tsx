@@ -6,10 +6,19 @@ type BrandDetailProps = {
   name: string;
   description: string;
   centers?: string[];
+  heroUrl?: string;
+  galleryUrls?: string[];
   onClose: () => void;
 };
 
-export function BrandDetail({ name, description, centers = [], onClose }: BrandDetailProps) {
+export function BrandDetail({
+  name,
+  description,
+  centers = [],
+  heroUrl,
+  galleryUrls = [],
+  onClose,
+}: BrandDetailProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 8 }}
@@ -43,13 +52,43 @@ export function BrandDetail({ name, description, centers = [], onClose }: BrandD
           </div>
         </div>
         <div className="relative aspect-[16/10] rounded-lg overflow-hidden bg-neutral-100">
-          <Image
-            src="/assets/placeholders/brand.jpg"
-            alt={`Visuel ${name}`}
-            fill
-            className="object-cover"
-          />
+          {heroUrl ? (
+            <Image src={heroUrl} alt={`Visuel ${name}`} fill className="object-cover" />
+          ) : name === 'Smile World' ? (
+            <Image
+              src="https://cdn.prod.website-files.com/6814c438f30142dd9c692fa2/68825470074376fd66ed869b_6878d972e61dc98d823024fe_LECOURBE-3.avif"
+              alt="Smile World — vue immersive centre multi-activités"
+              fill
+              className="object-cover"
+            />
+          ) : name === 'Laser World' ? (
+            <Image
+              src="https://laser-world-paris.fr/wp-content/uploads/2021/03/salle_paris-1022x425.jpg"
+              alt="Laser World — salle de jeu immersive"
+              fill
+              className="object-cover"
+            />
+          ) : (
+            <Image
+              src="/assets/placeholders/brand.jpg"
+              alt={`Visuel ${name}`}
+              fill
+              className="object-cover"
+            />
+          )}
         </div>
+        {galleryUrls.length > 0 && (
+          <div className="lg:col-span-2 mt-4 grid grid-cols-3 gap-2">
+            {galleryUrls.map((u) => (
+              <div
+                key={u}
+                className="relative aspect-[4/3] rounded-md overflow-hidden bg-neutral-100"
+              >
+                <Image src={u} alt={`Vignette ${name}`} fill className="object-cover" />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </motion.div>
   );

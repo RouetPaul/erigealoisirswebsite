@@ -7,7 +7,7 @@ export function Hero({ locale }: { locale: string }) {
       <div className="container-site py-24 lg:py-32 grid gap-8 lg:grid-cols-2 items-center">
         <div>
           <h1 id="hero-title" className="text-4xl/tight sm:text-5xl/tight font-bold text-[#60617E]">
-            Un groupe solide & à échelle humaine
+            Erigea Loisirs – Le leader du loisir indoor multi-activité en Île-de-France
           </h1>
           <p className="mt-4 text-gray-800 max-w-prose">
             Promotion | Patrimoine | Loisirs-CHR. Groupe multi-activités ancré en Île-de-France,
@@ -30,13 +30,14 @@ export function Hero({ locale }: { locale: string }) {
         </div>
         <div className="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-lg bg-[var(--pastel-1)]">
           <Image
-            src="/assets/placeholders/hero.jpg"
-            alt="Illustration institutionnelle"
+            src="https://cdn.prod.website-files.com/6814c438f30142dd9c692fa2/68825470074376fd66ed869b_6878d972e61dc98d823024fe_LECOURBE-3.avif"
+            alt="Smile World — multi-activités immersives"
             fill
             sizes="(min-width:1024px) 50vw, 100vw"
             className="object-cover"
             priority
           />
+          <div className="absolute inset-0 bg-[#60617E]/50" aria-hidden />
         </div>
       </div>
     </section>

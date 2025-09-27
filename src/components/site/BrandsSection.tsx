@@ -99,6 +99,21 @@ export function BrandsSection() {
                     name={b.name}
                     description={b.description}
                     centers={b.centers}
+                    heroUrl={
+                      b.key === 'smile'
+                        ? 'https://cdn.prod.website-files.com/6814c438f30142dd9c692fa2/68825470074376fd66ed869b_6878d972e61dc98d823024fe_LECOURBE-3.avif'
+                        : b.key === 'laser'
+                          ? 'https://laser-world-paris.fr/wp-content/uploads/2021/03/salle_paris-1022x425.jpg'
+                          : undefined
+                    }
+                    galleryUrls={
+                      b.key === 'smile'
+                        ? [
+                            'https://cdn.prod.website-files.com/6814c438f30142dd9c692fa2/68793d7274d769214a5adcf7_laser-game-paris15-lecourbe-smile-world.avif',
+                            'https://cdn.prod.website-files.com/6814c438f30142dd9c692fa2/68790d664ba5f684f57c79fe_LECOURBE_WEB-4.avif',
+                          ]
+                        : []
+                    }
                     onClose={() => setActive(null)}
                   />
                 )}
@@ -128,6 +143,21 @@ export function BrandsSection() {
                 name={activeBrand.name}
                 description={activeBrand.description}
                 centers={activeBrand.centers}
+                heroUrl={
+                  activeBrand.key === 'smile'
+                    ? 'https://cdn.prod.website-files.com/6814c438f30142dd9c692fa2/68825470074376fd66ed869b_6878d972e61dc98d823024fe_LECOURBE-3.avif'
+                    : activeBrand.key === 'laser'
+                      ? 'https://laser-world-paris.fr/wp-content/uploads/2021/03/salle_paris-1022x425.jpg'
+                      : undefined
+                }
+                galleryUrls={
+                  activeBrand.key === 'smile'
+                    ? [
+                        'https://cdn.prod.website-files.com/6814c438f30142dd9c692fa2/68793d7274d769214a5adcf7_laser-game-paris15-lecourbe-smile-world.avif',
+                        'https://cdn.prod.website-files.com/6814c438f30142dd9c692fa2/68790d664ba5f684f57c79fe_LECOURBE_WEB-4.avif',
+                      ]
+                    : []
+                }
                 onClose={() => setActive(null)}
               />
             )}
