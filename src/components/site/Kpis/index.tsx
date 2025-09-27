@@ -14,7 +14,17 @@ export function Kpis({ items }: { items: Kpi[] }) {
             key={k.label}
             className="rounded-2xl border border-neutral-200 bg-[var(--pastel-2)] p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all"
           >
-            <KpiCounter value={k.value} prefix={k.prefix} suffix={k.suffix} />
+            <div className="flex items-center gap-2 text-[#60617E]">
+              <svg aria-hidden viewBox="0 0 24 24" className="h-5 w-5">
+                <path
+                  d="M5 12h14M5 6h14M5 18h14"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              </svg>
+              <KpiCounter value={k.value} prefix={k.prefix} suffix={k.suffix} />
+            </div>
             <p className="mt-2 text-sm text-gray-800">{k.label}</p>
           </div>
         ))}
