@@ -10,6 +10,7 @@ import { BrandsSection } from '@/components/site/BrandsSection';
 import { PressPreview } from '@/components/site/PressPreview';
 import { supportedLocales } from '@/lib/i18n';
 import { LeaderQuote } from '@/components/site/LeaderQuote';
+import { Pillars } from '@/components/site/Pillars';
 
 export default async function Landing({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -19,6 +20,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
 
       <About />
       <BrandsSection />
+      <Pillars />
       <Kpis
         items={[
           { label: 'CA 2025 (run rate)', value: 33_000_000, suffix: '€' },

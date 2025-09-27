@@ -9,10 +9,10 @@
   --background: #ffffff;
   --foreground: #1f2937; /* gray-800 */
 
-  /* Pastels */
-  --pastel-1: #eeeaf7; /* violet pastel léger */
-  --pastel-2: #e7e1f5; /* violet pastel moyen */
-  --pastel-3: #f1ecfa; /* violet pastel doux */
+  /* Pastels (gris minéral) */
+  --pastel-1: #f8f8de;
+  --pastel-2: #f7f8da;
+  --pastel-3: #f8f8de;
 }
 
 @media (prefers-color-scheme: dark) {
