@@ -18,7 +18,10 @@ const nextOpenings = [
   { name: 'Lecourbe', lat: 48.841, lng: 2.296 },
   { name: 'La Varenne', lat: 48.792, lng: 2.499 },
 ];
-import { InteractiveMap } from './Map.client';
+import dynamic from 'next/dynamic';
+const InteractiveMap = dynamic(() => import('./Map.client').then((m) => m.InteractiveMap), {
+  ssr: false,
+});
 
 export function MapStatic() {
   return (

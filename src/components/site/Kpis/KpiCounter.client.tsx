@@ -15,14 +15,14 @@ export function KpiCounter({
   const [display, setDisplay] = useState(0);
   const ref = useRef<HTMLDivElement | null>(null);
   const started = useRef(false);
-  const prefersReduced =
-    typeof window !== 'undefined' &&
-    window.matchMedia &&
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    const prefersReduced =
+      typeof window !== 'undefined' &&
+      window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

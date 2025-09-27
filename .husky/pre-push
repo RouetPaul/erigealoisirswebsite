@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+printf "\n[pre-push] Vérification build locale...\n"
+npm run build --silent
+status=$?
+if [ $status -ne 0 ]; then
+  echo "[pre-push] Build échoué. Push annulé." >&2
+  exit 1
+fi
+echo "[pre-push] Build OK."
