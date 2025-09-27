@@ -1,3 +1,4 @@
+'use client';
 const opened = [
   { name: 'Montigny-le-Bretonneux', lat: 48.771, lng: 2.036 },
   { name: 'Bercy 2', lat: 48.818, lng: 2.394 },
@@ -17,10 +18,7 @@ const nextOpenings = [
   { name: 'Lecourbe', lat: 48.841, lng: 2.296 },
   { name: 'La Varenne', lat: 48.792, lng: 2.499 },
 ];
-import dynamic from 'next/dynamic';
-const InteractiveMap = dynamic(() => import('./Map.client').then((m) => m.InteractiveMap), {
-  ssr: false,
-});
+import { InteractiveMap } from './Map.client';
 
 export function MapStatic() {
   return (
