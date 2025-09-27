@@ -10,22 +10,18 @@ type Place = {
   status: 'open' | 'soon';
 };
 
-const iconOpen = new L.Icon({
-  iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
-  iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
-  shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41],
+const iconOpen = new L.DivIcon({
+  className: 'rounded-full shadow -translate-y-1 border border-white',
+  html: '<div style="width:18px;height:18px;background:#60617E;border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,.25)"></div>',
+  iconSize: [18, 18],
+  iconAnchor: [9, 9],
 });
 
 const iconSoon = new L.DivIcon({
-  className:
-    'bg-amber-500/90 rounded-full text-white text-[10px] leading-[20px] text-center w-5 h-5 border border-white shadow',
-  html: '⚑',
-  iconSize: [20, 20],
-  iconAnchor: [10, 10],
+  className: 'rounded-full shadow -translate-y-1 border border-white',
+  html: '<div style="width:18px;height:18px;background:#DBDE6F;border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,.25)"></div>',
+  iconSize: [18, 18],
+  iconAnchor: [9, 9],
 });
 
 export function InteractiveMap({ places }: { places: Place[] }) {

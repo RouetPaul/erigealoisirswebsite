@@ -9,13 +9,13 @@ const opened = [
   { name: 'La Défense', lat: 48.891, lng: 2.241 },
   { name: 'Aulnay', lat: 48.953, lng: 2.489 },
   { name: 'Maurepas', lat: 48.763, lng: 1.918 },
+  { name: 'Créteil Soleil', lat: 48.777, lng: 2.455 },
+  { name: 'Montparnasse', lat: 48.843, lng: 2.322 },
+  { name: 'Lecourbe', lat: 48.841, lng: 2.296 },
 ];
 
 const nextOpenings = [
-  { name: 'Créteil Soleil', lat: 48.777, lng: 2.455 },
-  { name: 'Montparnasse', lat: 48.843, lng: 2.322 },
   { name: 'Montmartre', lat: 48.886, lng: 2.343 },
-  { name: 'Lecourbe', lat: 48.841, lng: 2.296 },
   { name: 'La Varenne', lat: 48.792, lng: 2.499 },
 ];
 import dynamic from 'next/dynamic';
