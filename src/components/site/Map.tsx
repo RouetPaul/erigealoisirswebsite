@@ -40,7 +40,7 @@ export function MapStatic() {
             <h3 className="font-semibold text-[#60617E]">Centres ouverts</h3>
             <ul className="mt-2 grid grid-cols-2 gap-2 text-sm text-gray-800">
               {opened.map((n) => (
-                <li key={n} className="flex items-center gap-2">
+                <li key={n.name} className="flex items-center gap-2">
                   <span className="inline-block h-2 w-2 rounded-full bg-green-500" />
                   {n.name}
                 </li>
@@ -51,7 +51,7 @@ export function MapStatic() {
             <h3 className="font-semibold text-[#60617E]">Prochaines ouvertures</h3>
             <ul className="mt-2 grid grid-cols-2 gap-2 text-sm text-gray-800">
               {nextOpenings.map((n) => (
-                <li key={n} className="flex items-center gap-2">
+                <li key={n.name} className="flex items-center gap-2">
                   <span className="inline-block h-2 w-2 rounded-full bg-amber-500" />
                   {n.name}
                 </li>
