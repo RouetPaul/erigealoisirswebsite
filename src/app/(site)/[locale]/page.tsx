@@ -3,6 +3,7 @@ import { About } from '@/components/site/About';
 import { Kpis } from '@/components/site/Kpis';
 // import { OfferGrid } from '@/components/site/OfferGrid';
 import { Strategy } from '@/components/site/Strategy';
+import { Infrastructures } from '@/components/site/Infrastructures';
 import { Testimonials } from '@/components/site/Testimonials';
 import { MapStatic } from '@/components/site/Map';
 import { Contact } from '@/components/site/Contact';
@@ -23,17 +24,22 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
       <Pillars />
       <Kpis
         items={[
-          { label: 'CA 2025 (run rate)', value: 33_000_000, suffix: '€' },
-          { label: 'EBITDA 2025 (run rate)', value: 7_500_000, suffix: '€ (23 % de marge)' },
-          { label: 'Établissements ouverts (février 2025)', value: 10 },
-          { label: 'Ouvertures 2025 / 2026', value: 8, prefix: '+' },
-          { label: 'Collaborateurs', value: 150 },
-          { label: 'Marques complémentaires', value: 4 },
+          { label: 'clients / an', value: 950_000, icon: '👨‍👩‍👧' },
+          { label: 'chiffre d’affaires', value: 14_000_000, suffix: '€', icon: '💶' },
+          { label: 'centres ouverts', value: 12, icon: '🏢' },
+          { label: 'centres en ouverture', value: 6, icon: '🚧' },
+          { label: 'collaborateurs impliqués', value: 150, icon: '👥' },
+          {
+            label: 'Experts intégrés de A à Z par projet',
+            textValue: 'Experts intégrés',
+            icon: '👷‍♂️',
+          },
         ]}
       />
       {/* Offre multi-activité retirée */}
       <LeaderQuote />
       <Strategy />
+      <Infrastructures />
       <Testimonials />
       <MapStatic />
       <PressPreview locale={locale} />

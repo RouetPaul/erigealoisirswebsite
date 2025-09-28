@@ -1,6 +1,13 @@
 import { KpiCounter } from './KpiCounter.client';
 
-type Kpi = { label: string; value: number; prefix?: string; suffix?: string };
+type Kpi = {
+  label: string;
+  icon?: string; // emoji ou équivalent
+  value?: number; // nombre animé si présent
+  textValue?: string; // alternative non numérique
+  prefix?: string;
+  suffix?: string;
+};
 
 export function Kpis({ items }: { items: Kpi[] }) {
   return (
@@ -8,31 +15,29 @@ export function Kpis({ items }: { items: Kpi[] }) {
       <h2 id="kpis-title" className="text-2xl font-bold text-[#60617E]">
         Chiffres clés
       </h2>
+      {/* 2 lignes: 3 colonnes desktop, 2 tablettes */}
       <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((k) => (
           <div
             key={k.label}
             className="rounded-2xl border border-[#60617E]/20 bg-[var(--pastel-2)] p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all"
           >
-            <div className="flex items-center gap-2 text-[#60617E]">
-              <svg aria-hidden viewBox="0 0 24 24" className="h-5 w-5">
-                <path
-                  d="M5 12h14M5 6h14M5 18h14"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-              </svg>
-              <KpiCounter value={k.value} prefix={k.prefix} suffix={k.suffix} />
+            {/* Icône */}
+            {k.icon ? (
+              <div className="text-2xl text-[#60617E] mb-2" aria-hidden>
+                {k.icon}
+              </div>
+            ) : null}
+            {/* Valeur (anis) */}
+            <div className="text-[#DBDE6F]">
+              {typeof k.value === 'number' ? (
+                <KpiCounter value={k.value} prefix={k.prefix} suffix={k.suffix} />
+              ) : k.textValue ? (
+                <div className="text-3xl font-semibold">{k.textValue}</div>
+              ) : null}
             </div>
-            <p className="mt-2 text-sm text-gray-800">{k.label}</p>
-            <p className="text-xs text-[#60617E] mt-1">
-              {k.label.includes('ouverts')
-                ? 'en exploitation'
-                : k.label.includes('Ouvertures')
-                  ? 'en développement'
-                  : ''}
-            </p>
+            {/* Libellé (violet) */}
+            <p className="mt-2 text-sm font-medium text-[#60617E]">{k.label}</p>
           </div>
         ))}
       </div>
