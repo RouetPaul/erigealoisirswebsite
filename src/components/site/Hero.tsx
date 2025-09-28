@@ -28,16 +28,16 @@ export function Hero({ locale }: { locale: string }) {
             </a>
           </div>
         </div>
-        <div className="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-lg bg-[var(--pastel-1)]">
-          <Image
-            src="https://cdn.prod.website-files.com/6814c438f30142dd9c692fa2/68825470074376fd66ed869b_6878d972e61dc98d823024fe_LECOURBE-3.avif"
-            alt="Smile World — multi-activités immersives"
-            fill
-            sizes="(min-width:1024px) 50vw, 100vw"
-            className="object-cover"
-            priority
+        <div className="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-lg bg-black">
+          <video
+            className="h-full w-full object-cover"
+            src="https://cdn.webindiz.fr/accueil_-_vide%CC%81o_groupe%20(540p).mp4"
+            poster="https://cdn.prod.website-files.com/6814c438f30142dd9c692fa2/68c90c71b773caa68b45e953_cergy%20small.avif"
+            autoPlay
+            muted
+            loop
+            playsInline
           />
-          <div className="absolute inset-0 bg-[#60617E]/50" aria-hidden />
         </div>
       </div>
     </section>

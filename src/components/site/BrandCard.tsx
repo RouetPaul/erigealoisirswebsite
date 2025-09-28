@@ -4,9 +4,10 @@ type BrandCardProps = {
   name: string;
   onClick: () => void;
   isActive?: boolean;
+  thumbnailUrl?: string;
 };
 
-export function BrandCard({ name, onClick, isActive }: BrandCardProps) {
+export function BrandCard({ name, onClick, isActive, thumbnailUrl }: BrandCardProps) {
   return (
     <button
       type="button"
@@ -18,7 +19,7 @@ export function BrandCard({ name, onClick, isActive }: BrandCardProps) {
     >
       <div className="relative aspect-[4/3] w-full bg-neutral-100 rounded-md overflow-hidden">
         <Image
-          src="/assets/placeholders/brand.jpg"
+          src={thumbnailUrl || '/assets/placeholders/brand.jpg'}
           alt={`Logo ${name}`}
           fill
           className="object-cover"

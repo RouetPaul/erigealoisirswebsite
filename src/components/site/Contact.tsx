@@ -8,16 +8,16 @@ export function Contact() {
         <div className="rounded-xl border border-neutral-200 bg-white p-6">
           <h3 className="font-semibold">Presse</h3>
           <p className="mt-2 text-sm text-neutral-700">
-            <a className="underline" href="mailto:presse@erigea.fr">
-              presse@erigea.fr
+            <a className="underline" href="mailto:hugo.bednarski@vae-solis.com">
+              hugo.bednarski@vae-solis.com
             </a>
           </p>
         </div>
         <div className="rounded-xl border border-neutral-200 bg-white p-6">
           <h3 className="font-semibold">Investisseurs</h3>
           <p className="mt-2 text-sm text-neutral-700">
-            <a className="underline" href="mailto:corporate@erigea.fr">
-              corporate@erigea.fr
+            <a className="underline" href="mailto:l.dary@erigea.com">
+              l.dary@erigea.com
             </a>
           </p>
         </div>

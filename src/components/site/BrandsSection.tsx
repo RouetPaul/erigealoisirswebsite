@@ -9,12 +9,15 @@ type Brand = {
   name: string;
   description: string;
   centers: string[];
+  thumbnailUrl?: string;
 };
 
 const BRANDS: Brand[] = [
   {
     key: 'smile',
     name: 'Smile World',
+    thumbnailUrl:
+      'https://cdn.prod.website-files.com/68108d2d733afc34b6c16d14/6824b41f7be89d1f3f1526a1_74O00458%20Large.webp',
     description:
       'Smile World est le concept multi-activités phare d’Erigea Loisirs. Chaque centre rassemble dans un même lieu bowling, laser game, karaoké, arcades, mini-bowling et espaces de restauration, pour offrir une expérience complète et accessible à tous. Pensés comme de véritables destinations de loisirs, les Smile World s’adressent aussi bien aux familles qu’aux groupes d’amis et aux entreprises en quête de moments conviviaux et fédérateurs. Leur univers immersif et festif en fait un pilier de l’offre Erigea Loisirs et une référence en Île-de-France.',
     centers: [
@@ -31,6 +34,7 @@ const BRANDS: Brand[] = [
   {
     key: 'laser',
     name: 'Laser World',
+    thumbnailUrl: 'https://laser-world-paris.fr/wp-content/uploads/2020/10/H7A5680-660x420.jpg',
     description:
       'Avec Laser World, Erigea Loisirs réinvente le laser game à travers des univers thématiques uniques et spectaculaires. Chaque labyrinthe est décoré par des artistes, transformant le jeu en véritable expérience immersive. Certaines implantations intègrent également des karaokés et salles d’arcade, enrichissant encore l’offre de divertissement. Laser World attire un large public – adolescents, jeunes actifs, entreprises – et se distingue par sa capacité à accueillir des événements privés ou professionnels, avec des prestations sur mesure pour anniversaires et team building.',
     centers: [
@@ -43,6 +47,8 @@ const BRANDS: Brand[] = [
   {
     key: 'padel',
     name: 'Padel World',
+    thumbnailUrl:
+      'https://padelworld.fr/wp-content/uploads/2024/11/Padel-World-Maurepas-Isophit-7cours.jpg',
     description:
       'Padel World illustre la volonté d’Erigea Loisirs de diversifier son offre autour de pratiques sportives en pleine expansion. Situé à Maurepas, le premier club compte sept terrains dont six indoor, accessibles toute l’année. En complément, les membres bénéficient de cours particuliers ou collectifs, d’un espace fitness et d’un bar lounge convivial. Lieu de sport mais aussi de rencontre et de partage, Padel World s’adresse aux passionnés comme aux curieux, avec une programmation adaptée aux entreprises et aux événements privés.',
     centers: ['Maurepas'],
@@ -50,6 +56,8 @@ const BRANDS: Brand[] = [
   {
     key: 'climb',
     name: 'Climb World',
+    thumbnailUrl:
+      'https://images.fillout.com/orgid-6257/flowpublicid-nkd4GbJFGEus/widgetid-undefined/jpHwgssQK1pBNzVzEkRy52/Brand-Book---Climb-World---21-05-2025.png?a=nfuCbZJ1V7tDi1eePrei1Q',
     description:
       'Climb World propose une approche ludique et colorée de l’escalade, accessible à tous les profils. Ses salles sont conçues pour éveiller la curiosité des enfants, accompagner les débutants et offrir un terrain stimulant aux grimpeurs confirmés. Plus qu’une activité sportive, Climb World se veut une expérience immersive, où chaque décor thématique transforme la grimpe en aventure. C’est une marque qui traduit la vision d’Erigea Loisirs : associer sport, loisir et immersion dans des espaces accueillants et inspirants.',
     centers: ['Gaîté Montparnasse'],
@@ -86,7 +94,12 @@ export function BrandsSection() {
       <div className="mt-6 grid gap-6 grid-cols-1 lg:hidden">
         {BRANDS.map((b) => (
           <div key={b.key}>
-            <BrandCard name={b.name} onClick={() => onToggle(b.key)} isActive={active === b.key} />
+            <BrandCard
+              name={b.name}
+              onClick={() => onToggle(b.key)}
+              isActive={active === b.key}
+              thumbnailUrl={b.thumbnailUrl}
+            />
             <div
               className="mt-4"
               id={`brand-detail-${b.key}`}
@@ -132,6 +145,7 @@ export function BrandsSection() {
               name={b.name}
               onClick={() => onToggle(b.key)}
               isActive={active === b.key}
+              thumbnailUrl={b.thumbnailUrl}
             />
           ))}
         </div>

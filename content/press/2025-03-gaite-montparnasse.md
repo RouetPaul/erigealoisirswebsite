@@ -3,7 +3,7 @@ title: 'Smile World Gaîté Montparnasse : un complexe de 2 000 m² en plein cœ
 slug: 'smileworld-gaite-montparnasse'
 datePublished: '2025-03-05'
 excerpt: 'Le centre Smile World Gaîté Montparnasse accueille le public avec bowling, laser game, karaoké et concerts live.'
-hero: '/assets/placeholders/hero.jpg'
+hero: 'https://cdn.prod.website-files.com/6814c438f30142dd9c692fa2/68c90c99a74ec1036ef89567_montparnasse%20small.avif'
 tags: ['ouverture', 'smileworld', 'paris']
 lang: 'fr'
 ---
