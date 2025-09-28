@@ -2,14 +2,15 @@ import { KpiCounter } from './KpiCounter.client';
 
 type Kpi = {
   label: string;
-  icon?: string; // emoji ou équivalent
-  value?: number; // nombre animé si présent
-  textValue?: string; // alternative non numérique
+  value?: number;
+  textValue?: string;
   prefix?: string;
   suffix?: string;
 };
 
-export function Kpis({ items }: { items: Kpi[] }) {
+type InfraItem = { label: string; value: number | string };
+
+export function Kpis({ items, infraItems = [] }: { items: Kpi[]; infraItems?: InfraItem[] }) {
   return (
     <section id="kpis" aria-labelledby="kpis-title" className="container-site py-20">
       <h2 id="kpis-title" className="text-2xl font-bold text-[#60617E]">
@@ -20,14 +21,8 @@ export function Kpis({ items }: { items: Kpi[] }) {
         {items.map((k) => (
           <div
             key={k.label}
-            className="rounded-2xl border border-[#60617E]/20 bg-[var(--pastel-2)] p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all"
+            className="rounded-2xl border border-[#60617E] bg-[#60617E] p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all"
           >
-            {/* Icône */}
-            {k.icon ? (
-              <div className="text-2xl text-[#60617E] mb-2" aria-hidden>
-                {k.icon}
-              </div>
-            ) : null}
             {/* Valeur (anis) */}
             <div className="text-[#DBDE6F]">
               {typeof k.value === 'number' ? (
@@ -36,11 +31,31 @@ export function Kpis({ items }: { items: Kpi[] }) {
                 <div className="text-3xl font-semibold">{k.textValue}</div>
               ) : null}
             </div>
-            {/* Libellé (violet) */}
-            <p className="mt-2 text-sm font-medium text-[#60617E]">{k.label}</p>
+            {/* Libellé: contraste sur fond violet */}
+            <p className="mt-2 text-sm font-medium text-white/95">{k.label}</p>
           </div>
         ))}
       </div>
+
+      {infraItems.length > 0 && (
+        <div className="mt-14">
+          <h3 className="text-xl font-semibold text-[#60617E]">Infrastructures et activités</h3>
+          {/* Grille fluide: 4/2/1 */}
+          <div className="mt-6 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+            {infraItems.map((it) => (
+              <div
+                key={it.label}
+                className="rounded-2xl border border-[#60617E] bg-[#60617E] p-6 text-center"
+              >
+                <div className="text-3xl font-semibold text-[#DBDE6F]">
+                  {typeof it.value === 'number' ? it.value.toLocaleString() : it.value}
+                </div>
+                <div className="mt-2 text-sm font-medium text-white/95">{it.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </section>
   );
 }
