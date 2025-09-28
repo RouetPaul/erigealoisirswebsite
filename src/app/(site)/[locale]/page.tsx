@@ -2,7 +2,7 @@ import { Hero } from '@/components/site/Hero';
 import { About } from '@/components/site/About';
 import { Kpis } from '@/components/site/Kpis';
 // import { OfferGrid } from '@/components/site/OfferGrid';
-import { Strategy } from '@/components/site/Strategy';
+// import { Strategy } from '@/components/site/Strategy';
 // import { Testimonials } from '@/components/site/Testimonials';
 import { MapStatic } from '@/components/site/Map';
 import { Contact } from '@/components/site/Contact';
@@ -47,7 +47,6 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
       />
       {/* Offre multi-activité retirée */}
       <LeaderQuote />
-      <Strategy />
       <MapStatic />
       <PressPreview locale={locale} />
       <Contact />
