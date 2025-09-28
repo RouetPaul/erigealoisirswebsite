@@ -47,8 +47,7 @@ const BRANDS: Brand[] = [
   {
     key: 'padel',
     name: 'Padel World',
-    thumbnailUrl:
-      'https://padelworld.fr/wp-content/uploads/2024/11/Padel-World-Maurepas-Isophit-7cours.jpg',
+    thumbnailUrl: 'https://cdn.webindiz.fr/Padel-World-Maurepas-Isophit-7cours.jpg',
     description:
       'Padel World illustre la volonté d’Erigea Loisirs de diversifier son offre autour de pratiques sportives en pleine expansion. Situé à Maurepas, le premier club compte sept terrains dont six indoor, accessibles toute l’année. En complément, les membres bénéficient de cours particuliers ou collectifs, d’un espace fitness et d’un bar lounge convivial. Lieu de sport mais aussi de rencontre et de partage, Padel World s’adresse aux passionnés comme aux curieux, avec une programmation adaptée aux entreprises et aux événements privés.',
     centers: ['Maurepas'],
@@ -57,7 +56,7 @@ const BRANDS: Brand[] = [
     key: 'climb',
     name: 'Climb World',
     thumbnailUrl:
-      'https://images.fillout.com/orgid-6257/flowpublicid-nkd4GbJFGEus/widgetid-undefined/jpHwgssQK1pBNzVzEkRy52/Brand-Book---Climb-World---21-05-2025.png?a=nfuCbZJ1V7tDi1eePrei1Q',
+      'https://cdn.webindiz.fr/Screenshot%202025-09-28%20at%205.13.42%E2%80%AFPM%20Medium.jpeg',
     description:
       'Climb World propose une approche ludique et colorée de l’escalade, accessible à tous les profils. Ses salles sont conçues pour éveiller la curiosité des enfants, accompagner les débutants et offrir un terrain stimulant aux grimpeurs confirmés. Plus qu’une activité sportive, Climb World se veut une expérience immersive, où chaque décor thématique transforme la grimpe en aventure. C’est une marque qui traduit la vision d’Erigea Loisirs : associer sport, loisir et immersion dans des espaces accueillants et inspirants.',
     centers: ['Gaîté Montparnasse'],
@@ -112,21 +111,7 @@ export function BrandsSection() {
                     name={b.name}
                     description={b.description}
                     centers={b.centers}
-                    heroUrl={
-                      b.key === 'smile'
-                        ? 'https://cdn.prod.website-files.com/6814c438f30142dd9c692fa2/68825470074376fd66ed869b_6878d972e61dc98d823024fe_LECOURBE-3.avif'
-                        : b.key === 'laser'
-                          ? 'https://laser-world-paris.fr/wp-content/uploads/2021/03/salle_paris-1022x425.jpg'
-                          : undefined
-                    }
-                    galleryUrls={
-                      b.key === 'smile'
-                        ? [
-                            'https://cdn.prod.website-files.com/6814c438f30142dd9c692fa2/68793d7274d769214a5adcf7_laser-game-paris15-lecourbe-smile-world.avif',
-                            'https://cdn.prod.website-files.com/6814c438f30142dd9c692fa2/68790d664ba5f684f57c79fe_LECOURBE_WEB-4.avif',
-                          ]
-                        : []
-                    }
+                    heroUrl={b.thumbnailUrl}
                     onClose={() => setActive(null)}
                   />
                 )}
@@ -157,21 +142,7 @@ export function BrandsSection() {
                 name={activeBrand.name}
                 description={activeBrand.description}
                 centers={activeBrand.centers}
-                heroUrl={
-                  activeBrand.key === 'smile'
-                    ? 'https://cdn.prod.website-files.com/6814c438f30142dd9c692fa2/68825470074376fd66ed869b_6878d972e61dc98d823024fe_LECOURBE-3.avif'
-                    : activeBrand.key === 'laser'
-                      ? 'https://laser-world-paris.fr/wp-content/uploads/2021/03/salle_paris-1022x425.jpg'
-                      : undefined
-                }
-                galleryUrls={
-                  activeBrand.key === 'smile'
-                    ? [
-                        'https://cdn.prod.website-files.com/6814c438f30142dd9c692fa2/68793d7274d769214a5adcf7_laser-game-paris15-lecourbe-smile-world.avif',
-                        'https://cdn.prod.website-files.com/6814c438f30142dd9c692fa2/68790d664ba5f684f57c79fe_LECOURBE_WEB-4.avif',
-                      ]
-                    : []
-                }
+                heroUrl={activeBrand.thumbnailUrl}
                 onClose={() => setActive(null)}
               />
             )}
