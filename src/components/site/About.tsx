@@ -1,6 +1,6 @@
 export function About() {
   return (
-    <section id="about" aria-labelledby="about-title" className="py-20 bg-[var(--pastel-1)]">
+    <section id="about" aria-labelledby="about-title" className="py-20 bg-white">
       <div className="container-site">
         <h2 id="about-title" className="text-2xl font-bold text-[#60617E]">
           Qui sommes-nous

@@ -3,13 +3,13 @@ import { Button } from '@/components/ds/Button';
 
 export function Hero({ locale }: { locale: string }) {
   return (
-    <section aria-labelledby="hero-title" className="relative isolate overflow-hidden">
+    <section aria-labelledby="hero-title" className="relative isolate overflow-hidden bg-[#60617E]">
       <div className="container-site py-24 lg:py-32 grid gap-8 lg:grid-cols-2 items-center">
         <div>
-          <h1 id="hero-title" className="text-4xl/tight sm:text-5xl/tight font-bold text-[#60617E]">
+          <h1 id="hero-title" className="text-4xl/tight sm:text-5xl/tight font-bold text-white">
             Erigea Loisirs – Le leader du loisir indoor multi-activité en Île-de-France
           </h1>
-          <p className="mt-4 text-gray-800 max-w-prose">
+          <p className="mt-4 text-white/90 max-w-prose">
             Promotion | Patrimoine | Loisirs-CHR. Groupe multi-activités ancré en Île-de-France,
             structuré et résolument orienté client.
           </p>
