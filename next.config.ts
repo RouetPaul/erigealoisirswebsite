@@ -10,6 +10,7 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'laser-world-paris.fr' },
       { protocol: 'https', hostname: 'www.laser-world-paris.fr' },
       { protocol: 'https', hostname: 'laser-world-paris.fr', pathname: '/**' },
+      { protocol: 'https', hostname: 'cdn.webindiz.fr', pathname: '/**' },
     ],
   },
 };

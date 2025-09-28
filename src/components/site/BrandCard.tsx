@@ -23,6 +23,7 @@ export function BrandCard({ name, onClick, isActive, thumbnailUrl }: BrandCardPr
           alt={`Logo ${name}`}
           fill
           className="object-cover"
+          unoptimized={thumbnailUrl?.includes('cdn.webindiz.fr')}
         />
       </div>
       <p className="mt-3 text-sm font-medium text-[#60617E]">{name}</p>

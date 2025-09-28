@@ -55,6 +55,7 @@ export function BrandDetail({
             alt={`Visuel ${name}`}
             fill
             className="object-cover"
+            unoptimized={!!heroUrl && heroUrl.includes('cdn.webindiz.fr')}
           />
         </div>
       </div>
