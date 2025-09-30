@@ -21,10 +21,6 @@ export function About() {
         </h2>
         <div className="mt-6 grid gap-8 lg:grid-cols-2 items-start">
           <p className="text-gray-800 max-w-prose">
-            <b>Un groupe solide et à échelle humaine</b>, fondé sur <b>trois piliers</b> :{' '}
-            <b>Promotion</b>, <b>Patrimoine</b> et <b>Loisirs-CHR</b>.
-            <br />
-            <br />
             Le <b>Groupe Erigea Loisirs</b> est un acteur <b>innovant</b> et aujourd’hui{' '}
             <b>majeur du loisir indoor urbain</b>, à la croisée entre <b>divertissement familial</b>
             , <b>loisirs digitaux</b> et <b>expériences immersives</b>.

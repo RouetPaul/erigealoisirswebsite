@@ -10,7 +10,7 @@ import { BrandsSection } from '@/components/site/BrandsSection';
 import { PressPreview } from '@/components/site/PressPreview';
 import { supportedLocales } from '@/lib/i18n';
 import { LeaderQuote } from '@/components/site/LeaderQuote';
-import { Pillars } from '@/components/site/Pillars';
+// import { Pillars } from '@/components/site/Pillars';
 
 export default async function Landing({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -20,7 +20,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
 
       <About />
       <BrandsSection />
-      <Pillars />
+      {/* Section piliers retirée */}
       <Kpis
         items={[
           { label: 'clients / an', value: 950_000 },

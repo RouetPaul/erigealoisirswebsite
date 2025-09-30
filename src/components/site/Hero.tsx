@@ -21,7 +21,7 @@ export function Hero({ locale }: { locale: string }) {
               Découvrir le Groupe
             </a>
             <a
-              className="inline-flex items-center justify-center rounded-lg border border-neutral-300 px-5 py-3 text-sm font-medium text-[var(--color-secondary)] hover:bg-[var(--pastel-1)] hover:shadow"
+              className="inline-flex items-center justify-center rounded-lg border border-neutral-300 px-5 py-3 text-sm font-medium text-[#DBDE6F] hover:bg-[var(--pastel-1)] hover:shadow"
               href={`/${locale}/press`}
             >
               Communiqués de presse
