@@ -27,7 +27,7 @@ export default async function Landing({ params }: { params: Promise<{ locale: st
           { label: 'chiffre d’affaires', value: 14_000_000, suffix: '€' },
           { label: 'centres ouverts', value: 12 },
           { label: 'centres en ouverture', value: 6 },
-          { label: 'collaborateurs impliqués', value: 150 },
+          { label: 'collaborateurs impliqués', value: 300 },
           { label: 'Experts intégrés de A à Z par projet', textValue: 'Experts intégrés' },
         ]}
         infraItems={[

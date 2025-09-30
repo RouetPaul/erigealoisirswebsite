@@ -17,12 +17,12 @@ export function BrandCard({ name, onClick, isActive, thumbnailUrl }: BrandCardPr
         isActive ? 'border-[#60617E]' : 'border-neutral-200'
       } p-4 bg-white hover:shadow-xl hover:-translate-y-1 transition-all`}
     >
-      <div className="relative aspect-[4/3] w-full bg-neutral-100 rounded-md overflow-hidden">
+      <div className="relative aspect-[4/3] w-full bg-white rounded-md overflow-hidden">
         <Image
           src={thumbnailUrl || '/assets/placeholders/brand.jpg'}
           alt={`Logo ${name}`}
           fill
-          className="object-cover"
+          className="object-contain p-4 saturate-0"
           unoptimized={thumbnailUrl?.includes('cdn.webindiz.fr')}
         />
       </div>

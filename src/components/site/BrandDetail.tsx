@@ -43,10 +43,45 @@ export function BrandDetail({
               ))}
             </div>
           )}
-          <div className="mt-6">
+          <div className="mt-6 flex gap-3">
             <Button variant="secondary" onClick={onClose}>
               Fermer
             </Button>
+            {name === 'Smile World' && (
+              <a
+                className="inline-flex items-center px-4 py-2 rounded-lg border border-[#60617E] text-[#60617E] hover:bg-[var(--pastel-1)]"
+                href="https://smile-world.fr"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Visiter
+              </a>
+            )}
+            {name === 'Laser World' && (
+              <a
+                className="inline-flex items-center px-4 py-2 rounded-lg border border-[#60617E] text-[#60617E] hover:bg-[var(--pastel-1)]"
+                href="https://laser-world-paris.fr"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Visiter
+              </a>
+            )}
+            {name === 'Padel World' && (
+              <a
+                className="inline-flex items-center px-4 py-2 rounded-lg border border-[#60617E] text-[#60617E] hover:bg-[var(--pastel-1)]"
+                href="https://padelworld.fr/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Visiter
+              </a>
+            )}
+            {name === 'Climb World' && (
+              <span className="inline-flex items-center px-4 py-2 rounded-lg border border-neutral-300 text-neutral-500">
+                Coming soon
+              </span>
+            )}
           </div>
         </div>
         <div className="relative aspect-[16/10] rounded-lg overflow-hidden bg-neutral-100">

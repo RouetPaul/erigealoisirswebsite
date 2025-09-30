@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -27,8 +28,19 @@ export function Navbar({ locale }: { locale: string }) {
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-neutral-200 relative">
       <div className="container-site flex items-center justify-between h-14">
-        <Link href={`/${locale}`} className="font-semibold">
-          Erigea Loisirs
+        <Link
+          href={`/${locale}`}
+          className="flex items-center gap-2"
+          aria-label="Accueil Erigea Loisirs"
+        >
+          <Image
+            src="https://cdn.webindiz.fr/6717c9d7-7cef-474b-9277-4e0998d47d9c.png"
+            alt="Erigea Loisirs"
+            width={132}
+            height={28}
+            className="h-7 w-auto object-contain"
+            priority
+          />
         </Link>
         <nav aria-label="Navigation principale" className="hidden md:flex items-center gap-6">
           {links}

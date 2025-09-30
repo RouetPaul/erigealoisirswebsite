@@ -16,7 +16,9 @@ const opened = [
 
 const nextOpenings = [
   { name: 'Montmartre', lat: 48.886, lng: 2.343 },
-  { name: 'La Varenne', lat: 48.792, lng: 2.499 },
+  { name: 'Levallois-Perret', lat: 48.895, lng: 2.288 },
+  { name: 'Bourg-la-Reine', lat: 48.779, lng: 2.315 },
+  { name: 'Rueil-Malmaison', lat: 48.877, lng: 2.18 },
 ];
 import dynamic from 'next/dynamic';
 const InteractiveMap = dynamic(() => import('./Map.client').then((m) => m.InteractiveMap), {

@@ -1,6 +1,20 @@
 export function About() {
   return (
-    <section id="about" aria-labelledby="about-title" className="py-20 bg-white">
+    <section
+      id="about"
+      aria-labelledby="about-title"
+      className="py-20 bg-white relative overflow-hidden"
+    >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-5"
+        style={{
+          backgroundImage:
+            'url(https://cdn.webindiz.fr/4ca51e4f-43a9-4162-bdaa-5a0da7389ee3%20Large.jpeg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
       <div className="container-site">
         <h2 id="about-title" className="text-2xl font-bold text-[#60617E]">
           Qui sommes-nous
