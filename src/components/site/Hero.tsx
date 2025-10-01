@@ -10,8 +10,7 @@ export function Hero({ locale }: { locale: string }) {
             Erigea Loisirs – Le leader du loisir indoor multi-activité en Île-de-France
           </h1>
           <p className="mt-4 text-white/90 max-w-prose">
-            Promotion | Patrimoine | Loisirs-CHR. Groupe multi-activités ancré en Île-de-France,
-            structuré et résolument orienté client.
+            Groupe multi-activités ancré en Île-de-France, structuré et résolument orienté client.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
